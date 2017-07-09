@@ -14,11 +14,21 @@ Also, this initiative is a result of participating in [Didi challenge competitio
 ### Problem Statement
 The challenge this time is to understand and detect the objects around the vehicle. The sensor uses camera and Lidar. The goal is to identify the location of nearby cars and pedestrians on the 3D map from this information. The detected objects are scored based on the following idea.
 ![image1](image/image1.JPG)
+The reason why this indicator is correct is that by accurately grasping the position of the target object on the 3D map with something like a 3D box, it is possible to know the relationship between the vehicle and the surroundings, It is because you can handle the steering wheel after understanding the situation properly.
+Doing so prevents unfortunate accidents involving conflicts.  
+Especially I am interested in the development of automatic driving cars because I can not drive a car with paper drivers.
+When auto-driven cars are sold, my range of actions increases dramatically, and that degree of freedom also increases.
+Also, although Japan has entered an aging society, it is necessary to prevent accidents of elderly people in advance, and in anticipation of an increase in the demand for transportation methods accompanying such social changes, self-driving vehicles are revolutionary We believe we can demonstrate the effect.
+And, if I can contribute to the development of that technology, I do not think there is any more honor.
+
 
 ### Datasets and Inputs
 The organizer provided this dataset was. These data sets are obtained from the data of the actual driving of the car. The data contains the image of the forward vision, PointCloud data by Lidar. Besides, the position on the GPS of the subject vehicle and the surrounding object is included, but it was not used in this effort.  
 The relationship with the problem of the data set this time is that it is acquired by the same car and camera, Lidar for own vehicle. In other words, information such as angle of view of the image does not change. I took advantage of this in my efforts this time.  
-Also, in my efforts this time, I used [KittiBox](https://github.com/MarvinTeichmann/KittiBox)[1] and [YOLOv2](https://pjreddie.com/darknet/yolo/)[2] which I have already learned to detect vehicles and passers-by persons. KittiBox is learned against cars, YOLOv 2 is heard versatile for cars and passersby. It is assumed that the data set adopted for the current test was acquired by a general car and there is no significant difference from the object that can be detected by the learned model, which is a prerequisite I will.  
+Below, I will post the video prepared as the data of this time. This was taken with an in-vehicle camera, and about 100 G of such a moving picture was prepared.  
+![gif1](image/ford01.gif)  
+Also, in my efforts this time, I used [KittiBox](https://github.com/MarvinTeichmann/KittiBox)[1] and [YOLOv2](https://pjreddie.com/darknet/yolo/)[2] which I have already learned to detect vehicles and passers-by persons. KittiBox is learned against cars, YOLOv 2 is heard versatile for cars and passersby. It is assumed that the data set adopted for the current test was acquired by a general car and there is no significant difference from the object that can be detected by the learned model, which is a prerequisite I will.
+We applied these learned models to the movie as above and identified the position of the car.  
 [1] [MultiNet: Real-time Joint Semantic Reasoning for Autonomous Driving](https://arxiv.org/abs/1612.07695); Marvin Teichmann et al.  
 [2] [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242); Joseph Redmon et al.
 
@@ -26,11 +36,14 @@ Also, in my efforts this time, I used [KittiBox](https://github.com/MarvinTeichm
 Also, in this study, we needed to project the position of the car found in 2D to the position of the car on the 3D map.
 So I thought of an algorithm to estimate these from the car position on the 2D map.
 Specifically, the lateral direction uses the parallel orientation of the center position of the detected car region, and the depth direction uses the length of the area in the height direction of the detected vehicle region.
+![image2](image/image2.JPG)
+![image3](image/image3.JPG)
 
 ### Benchmark Model
 In this study, we compare Kittibox and YOLOv 2 first.
 The benchmark model is Kittibox, and compare the results of YOLOv 2 with that.
 Then, based on the result, decide an appropriate model and describe the effect when reflecting those models on the 3D map.
+Also, the composition of DNN of each model is not described here because the purpose is different. Please check each thesis.
 
 ### Evaluation Metrics
 This evaluation will discuss the consistency with the results already prepared for answers.
