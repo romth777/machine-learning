@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>capstone_report</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview { background: white !important; }
+.markdown-preview p, .markdown-preview h1, .markdown-preview h2, .markdown-preview h3, .markdown-preview h4, .markdown-preview h5, .markdown-preview h6, .markdown-preview li, .markdown-preview th, .markdown-preview td, .markdown-preview strong { color: black !important; }
+.markdown-preview body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; width: 800px; margin: auto; padding: 10px; background: rgb(255, 255, 255); }
+.markdown-preview h1 { font-size: 20px; color: rgb(117, 117, 117); text-align: center; margin-bottom: 10px; }
+.markdown-preview h1:hover { color: rgb(255, 255, 255); text-shadow: rgb(51, 51, 51) 1px 1px 1px; background-color: rgb(117, 117, 117); }
+.markdown-preview h2 { font-size: 17px; color: rgb(57, 114, 73); }
+.markdown-preview h2::before { content: ""; display: inline-block; margin-right: 1%; width: 16%; height: 10px; background-color: rgb(156, 183, 112); }
+.markdown-preview h2:hover { color: rgb(255, 255, 255); text-shadow: rgb(51, 51, 51) 1px 1px 1px; background-color: rgb(57, 114, 73); }
+.markdown-preview dt { float: left; clear: left; width: 17%; }
+.markdown-preview dd { margin-left: 17%; }
+.markdown-preview p { margin-top: 0px; margin-bottom: 3px; }
+.markdown-preview blockquote { text-align: center; }
+.markdown-preview a { text-decoration: none; color: rgb(57, 114, 73); }
+.markdown-preview a:hover, .markdown-preview a:active { color: rgb(255, 255, 255); text-decoration: none; text-shadow: rgb(51, 51, 51) 1px 1px 1px; background-color: rgb(57, 114, 73); }
+.markdown-preview hr { color: rgb(166, 166, 166); }
+.markdown-preview table { width: 100%; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="machine-learning-engineer-nanodegree">Machine Learning Engineer Nanodegree</h1>
+<h2 id="capstone-project">Capstone Project</h2>
+<p>Keigo Takahashi<br>July 25th, 2017</p>
+<h2 id="i-definition">I. Definition</h2>
+<h3 id="project-overview">Project Overview</h3>
+<h4 id="domain-background">Domain Background</h4>
+<p>In recent years, the demand for self-driving cars has increased. This requirement is because we believe that the self-driving cars can utilize the safety of society and efforts to improve productivity. For example, many people in Japan need to drive for living even if they are seniors in rural areas. Do not forget the fact that accidents are occurring due to deterioration of the judgment by aging. In such cases, self-driving cars can be utilized to prevent such unfortunate accidents in advance. Of course, this demand is not only Japan but worldwide. Also, for example, it is possible to use automated driving vehicles to reduce the labor load of long distance driving drivers and to suppress the number of public transportation personnel, which can lead to improvement of safety and productivity of society as a whole.
+Such like that, the needs for self-driving cars exists everywhere.
+Especially I am interested in the development of automatic driving cars because I can not drive a car with my paper license.
+When auto-driven cars start to launch, my range of activities increases dramatically, and that degree of freedom also increases.
+Also, although Japan has entered an aging society, it is necessary to prevent accidents of seniors in advance, and in anticipation of an increase in the demand for transportation methods accompanying such social changes, self-driving vehicles are revolutionary We believe we can demonstrate the effect.
+And, if I can contribute to the development of that technology, I do not think there is any more honor.
+And its development has been done actively.
+For example, at <a href="https://www.tesla.com/jp/autopilot">this movie</a>, Tesla explains the automatic driving level 3 automatic driving technique.
+This time, I recognize surrounding objects which are part of this automatic driving system.
+However, on the other hand, it will be explained in detail later, but if you adopt a method that uses a submillimeter wave sensor like Lidar it will be expensive inevitably. Therefore, in my research, I estimate the position of the car on 3D photographed by Lidar, using only 2D camera images. This is the theme of my research.
+This initiative also participated in <a href="https://challenge.udacity.com/team/#succcess-box">Didi Challenge Competition</a> hosted by DiDi and Udacity and summarized my work.</p>
+<div style="page-break-before:always"></div>
+
+<h4 id="datasets-and-inputs">Datasets and Inputs</h4>
+<p>The Organizer who is <a href="https://challenge.udacity.com/home/">Udacity and Didi</a> provided data set of  <a href="http://academictorrents.com/details/76352487923a31d47a6029ddebf40d9265e770b5">dataset1</a>, <a href="http://academictorrents.com/details/18d7f6be647eb6d581f5ff61819a11b9c21769c7">dataset2</a> for round 1 and <a href="http://academictorrents.com/details/67528e562da46e93cbabb8a255c9a8989be3448e">dataset</a> for round 2. These datasets are from the actual car with driving. The data contains the image of the forward vision and PointCloud data by Lidar. Besides, including the position on the GPS of the subject vehicle and the surrounding object, but I did not use it in this effort.<br>The camera and Lidar is installed to the car like below;<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image4.jpg" alt="image4"><br><a href="https://github.com/udacity/didi-competition/blob/master/images/urdf.png">reference from here</a><br>The camera can capture the image of forward vision, and it is just composed by RGB data, and size is 1400 * 512.
+On the other hand, Lidar is like <a href="http://velodynelidar.com/docs/datasheet/97-0038_Rev%20K_%20HDL-32E_Datasheet_Web.pdf">this</a>. And Pointcloud data shows the objects captured by Lidar surroundings like <a href="https://www.engadget.com/2016/01/04/nvidia-drive-px2/">this</a>.
+These data is zipped as a bag file which is based on <a href="http://wiki.ros.org/">ROS</a> as known as open source robotic operating system.
+The relationship of the datasets in this endeavor is that organizer acquired these datasets with the same car with camera and Lidar. In other words, information such as angle of view of the image does not change. I took this advantage in my efforts at this time.<br>Below, I will post the video prepared as the data. This video captured by an in-vehicle camera and the whole of datasets are about 100Gbyte of such a moving picture.<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01.gif" alt="gif1"><br>Also, in my efforts, I used <a href="https://github.com/MarvinTeichmann/KittiBox">KittiBox</a>[1] and <a href="https://pjreddie.com/darknet/yolo/">YOLOv2</a>[2] pretrained to detect vehicles and passers-by persons. KittiBox pretrained against cars, YOLOv2 is heard versatile for cars and passersby. I can use these model; it is because our data set assumed that the data set adapted for the general car and there is no significant difference from the object that our data set had.
+We applied these learned models to the movie as above and identified the position of the car.<br>[1] <a href="https://arxiv.org/abs/1612.07695">MultiNet: Real-time Joint Semantic Reasoning for Autonomous Driving</a>; Marvin Teichmann et al.<br>[2] <a href="https://arxiv.org/abs/1612.08242">YOLO9000: Better, Faster, Stronger</a>; Joseph Redmon et al.</p>
+<div style="page-break-before:always"></div>
+
+<h3 id="problem-statement">Problem Statement</h3>
+<h4 id="problem-statement">Problem Statement</h4>
+<p>The challenge this time is to understand and detect the objects around the vehicle. The sensor uses camera and Lidar. The goal is to identify the location of nearby cars and pedestrians on the 3D map from this information.
+This trial uses 2D image data to find how cars are detected.
+However, since there is no correct answer data, this may be a little qualitative evaluation, but I will make it possible to explain as quickness, etc.</p>
+<h3 id="metrics">Metrics</h3>
+<p>This evaluation will discuss the consistency with the results already prepared for answers.
+Specifically, the data is made up for testing, and it includes the car position on the 3D map. So it is possible to determine to what degree of correct answer rate in each model for the position information I will confirm and evaluate it.
+The detected objects are scored based on the following idea.<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image1.JPG" alt="image1">  <a href="https://github.com/udacity/didi-competition/tree/master/tracklets#metrics-and-scoring">reference from here</a><br>The reason why this indicator is correct is that by accurately grasping the position of the target object on the 3D map with something like a 3D box, it is possible to know the relationship between the vehicle and the surroundings. It is because you can handle the steering wheel after understanding the situation properly.</p>
+<div style="page-break-before:always"></div>
+
+
+<h2 id="ii-analysis">II. Analysis</h2>
+<h3 id="data-exploration">Data Exploration</h3>
+<p>So now I research the data of Datasets. Originally we got the dataset with .bag file, and the bag file contains some topics like below;</p>
+<ul>
+<li>/cloud_nodelet/parameter_descriptions       1 msg     : dynamic_reconfigure/ConfigDescription : Internal data</li>
+<li>/cloud_nodelet/parameter_updates            1 msg     : dynamic_reconfigure/Config : Internal data</li>
+<li>/diagnostics                             1141 msgs    : diagnostic_msgs/DiagnosticArray       (3 connections) : Hardware information</li>
+<li>/diagnostics_agg                          328 msgs    : diagnostic_msgs/DiagnosticArray       (2 connections) : Hardware information</li>
+<li>/diagnostics_toplevel_state               328 msgs    : diagnostic_msgs/DiagnosticStatus      (2 connections) : Hardware information</li>
+<li>/gps/fix                                 1275 msgs    : sensor_msgs/NavSatFix : gps position</li>
+<li>/gps/rtkfix                              1639 msgs    : nav_msgs/Odometry : gps position</li>
+<li>/gps/time                                1559 msgs    : sensor_msgs/TimeReference : gps time to harmonize each gpses</li>
+<li>/image_raw                               4917 msgs    : sensor_msgs/Image : image from the camera</li>
+<li>/obs1/gps/fix                             292 msgs    : sensor_msgs/NavSatFix : gps position</li>
+<li>/obs1/gps/rtkfix                         1634 msgs    : nav_msgs/Odometry : gps position</li>
+<li>/obs1/gps/time                           1144 msgs    : sensor_msgs/TimeReference : gps time to harmonize each gpses</li>
+<li>/radar/points                            3277 msgs    : sensor_msgs/PointCloud2 : PointCloud data</li>
+<li>/radar/range                             3277 msgs    : sensor_msgs/Range : PointCloud data</li>
+<li>/radar/tracks                            3278 msgs    : radar_driver/RadarTracks : PointCloud data</li>
+<li>/rosout                                    15 msgs    : rosgraph_msgs/Log                     (7 connections) : ROS log</li>
+<li>/tf                                     16267 msgs    : tf2_msgs/TFMessage : Transform</li>
+<li>/velodyne_nodelet_manager/bond            656 msgs    : bond/Status                           (3 connections) : PointCloud data</li>
+<li>/velodyne_packets                        1638 msgs    : velodyne_msgs/VelodyneScan : PointCloud data</li>
+<li>/velodyne_points                         1638 msgs    : sensor_msgs/PointCloud2 : PointCloud data
+These are the ROS data format of topics. These topics are changing in the each frame. In this project, I decided to use only the /image_raw to estimate the position of car, and project it to the 3D Lidar data of velodyne_points.</li>
+</ul>
+<h3 id="exploratory-visualization">Exploratory Visualization</h3>
+<p>Let me show you the visualized data with gif animation, image_raw and pointcloud data.  </p>
+<ul>
+<li>camera image view<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02.gif" alt="gif2">  </li>
+<li>PointCloud view<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02_pcl.gif" alt="gif3">  </li>
+</ul>
+<h3 id="algorithms-and-techniques">Algorithms and Techniques</h3>
+<p>Also, in this study, we needed to reproject the position of the car found in 2D to the 3D map.
+So I thought of an algorithm to estimate these from the car position on the 2D map.
+To detect cars in the 2D, I use YOLOv2 and KittiBox to compare the prediction of them.
+In the methodlogical story, the lateral direction uses the parallel orientation of the center position of the detected car region, and the depth direction uses the length of the area in the height direction of the detected vehicle region. These solution will show in the solution report.
+<img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image2.JPG" alt="image2">
+<img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image3.JPG" alt="image3"></p>
+<div style="page-break-before:always"></div>
+
+<h3 id="benchmark">Benchmark</h3>
+<p>Here, I will compare the two method of KittiBox and YOLOv2 in the 2D image to evaluate the prediction of the car.</p>
+<ul>
+<li>KittiBox<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02_ann_kb.gif" alt="gif4">  </li>
+<li>YOLOv2<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02_ann_yolov2.gif" alt="gif5">  </li>
+</ul>
+<h2 id="iii-methodology">III. Methodology</h2>
+<h3 id="implementation">Implementation</h3>
+<p>My codes are consist of the files below;  </p>
+<ul>
+<li>pipeline.py : main code of processing pipeline</li>
+<li>ImageProcessUtils.py : Utilities of Image processing e.g. Change the image color space, size, apply threshold, and draw boxes.</li>
+<li>generate_tracklet.py : generate result xml file<h4 id="about-pipeline-py">About pipeline.py</h4>
+In this file, I implemented the pipeline of the main process of my trial, the abstruct of the pipeline is below;  <ol>
+<li>load the image.</li>
+<li>apply detection to the image, and get rectangle of the object area of car.</li>
+<li>transfer it to the 3D map.<br>Let me show the details.  </li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>About &quot;load the image.&quot;  <pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>images&nbsp;=&nbsp;sorted(glob.glob(os.path.join(path,&nbsp;.jpg)),&nbsp;key=numericalSort)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;for&nbsp;fname&nbsp;in&nbsp;images:</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;if&nbsp;using&nbsp;kittibox</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;=&nbsp;mpimg.imread(fname)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;using&nbsp;YOLOv2</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;=&nbsp;Image.open(fname)</span></span></span></div></pre></li>
+</ul>
+<p>Here is the just only load the image, but the data type of image is not same depends on the library. So, I change how to load the image with matplotlib and PIL.</p>
+<ul>
+<li><p>About &quot;apply detection to the image, and get rectangle of the object area of car.&quot;  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;if&nbsp;using&nbsp;kittibox</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;output,&nbsp;bbox&nbsp;=&nbsp;pl.pipeline_kb(image)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;#&nbsp;if&nbsp;using&nbsp;YOLOv2</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;output,&nbsp;bbox&nbsp;=&nbsp;pl.pipeline_yolov2(image)</span></span></span></div></pre><p>The argment is the image object and return is annotated image as output, and rectangle of the car position as bbox. Additionally each function is below;  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;Main&nbsp;pipeline&nbsp;process&nbsp;of&nbsp;this&nbsp;project</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;def&nbsp;pipeline_kb(self,&nbsp;img):</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;convert&nbsp;dtype&nbsp;for&nbsp;uint8&nbsp;for&nbsp;processing</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;img&nbsp;=&nbsp;img.astype(np.uint8)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;apply&nbsp;kittibox</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;out_img,&nbsp;pred_boxes&nbsp;=&nbsp;self.annotate.make_annotate(img,&nbsp;threshold=0.5)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;stitch&nbsp;windows&nbsp;to&nbsp;centeroid&nbsp;and&nbsp;filter&nbsp;out&nbsp;false&nbsp;positive&nbsp;with&nbsp;heatmap</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;heatmap&nbsp;=&nbsp;np.zeros_like(img[:,&nbsp;:,&nbsp;0])</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;heat&nbsp;=&nbsp;self.ipu.add_heat(heatmap,&nbsp;pred_boxes)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>self.ipu.apply_threshold(heat,&nbsp;100000,&nbsp;3)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;labels&nbsp;=&nbsp;label(heatmap)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;draw_img&nbsp;=&nbsp;self.ipu.draw_labeled_bboxes(img,&nbsp;labels)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>bbox&nbsp;=&nbsp;self.ipu.get_labeled_bboxes(labels)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>out_img&nbsp;=&nbsp;draw_img</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;return&nbsp;out_img,&nbsp;bbox</span></span></span></div></pre><p>In this kittibox call function, stiich the rectangle to one in the same car using heatmap voted method.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;Main&nbsp;pipeline&nbsp;process&nbsp;of&nbsp;this&nbsp;project</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;def&nbsp;pipeline_yolov2(self,&nbsp;img):</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;apply&nbsp;YOLOv2</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;out_img,&nbsp;pred_boxes,&nbsp;pred_classes,&nbsp;pred_scores&nbsp;=&nbsp;self.annotate.make_annotate(img,&nbsp;threshold=0.5)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;get&nbsp;the&nbsp;highest&nbsp;prediction&nbsp;scored&nbsp;rectangle</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;max_s&nbsp;=&nbsp;float(&quot;-inf&quot;)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;bbox&nbsp;=&nbsp;[]</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;for&nbsp;b,&nbsp;c,&nbsp;s&nbsp;in&nbsp;zip(pred_boxes,&nbsp;pred_classes,&nbsp;pred_scores):</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>if&nbsp;c&nbsp;==&nbsp;self.target:</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>if&nbsp;s&nbsp;&gt;&nbsp;max_s:</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>bbox&nbsp;=&nbsp;[[[b[1],&nbsp;b[0]],&nbsp;[b[3],&nbsp;b[2]]]]</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_s&nbsp;=&nbsp;s</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>return&nbsp;out_img,&nbsp;bbox</span></span></span></div></pre><p>In this YOLOv2 call function, if there are some rectangle, it neglect the lower scored rectangles, using only highest scored rectangle.</p>
+</li>
+</ul>
+<ul>
+<li><p>About &quot;transfer it to the 3D map.&quot;  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>def&nbsp;estimate_obstacle_car(bbox):</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>bbox&nbsp;=&nbsp;bbox[0]</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;#&nbsp;center&nbsp;of&nbsp;the&nbsp;rectangle</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;cx&nbsp;=&nbsp;abs((bbox[1][0]&nbsp;+&nbsp;bbox[0][0])&nbsp;/&nbsp;2)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;cy&nbsp;=&nbsp;abs((bbox[1][1]&nbsp;+&nbsp;bbox[0][1])&nbsp;/&nbsp;2)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;size&nbsp;of&nbsp;the&nbsp;rectangle</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;dx&nbsp;=&nbsp;abs((bbox[1][0]&nbsp;-&nbsp;bbox[0][0]))</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;dy&nbsp;=&nbsp;abs((bbox[1][1]&nbsp;-&nbsp;bbox[0][1]))</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;tx,&nbsp;ty&nbsp;and&nbsp;tz&nbsp;are&nbsp;the&nbsp;positions&nbsp;of&nbsp;car&nbsp;in&nbsp;the&nbsp;3D,&nbsp;x&nbsp;is&nbsp;depth,&nbsp;y&nbsp;is&nbsp;horizontal&nbsp;position&nbsp;and&nbsp;z&nbsp;is&nbsp;vertical&nbsp;position.</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;This&nbsp;equation&nbsp;is&nbsp;from&nbsp;the&nbsp;measurement&nbsp;result&nbsp;of&nbsp;car&nbsp;size&nbsp;and&nbsp;3D&nbsp;position.</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;#&nbsp;tx:dy&nbsp;=&nbsp;28.7&nbsp;:&nbsp;75.9&nbsp;=&nbsp;4&nbsp;:&nbsp;320</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;a&nbsp;=&nbsp;(4&nbsp;-&nbsp;28.7)&nbsp;/&nbsp;(320&nbsp;-&nbsp;75.9)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;a&nbsp;+=&nbsp;-a&nbsp;/&nbsp;1.5</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;b&nbsp;=&nbsp;28.7&nbsp;-&nbsp;a&nbsp;*&nbsp;75.9&nbsp;-&nbsp;12&nbsp;#&nbsp;+&nbsp;is&nbsp;far,&nbsp;-&nbsp;is&nbsp;closer</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;tx&nbsp;=&nbsp;a&nbsp;*&nbsp;dy&nbsp;+&nbsp;b</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;This&nbsp;equation&nbsp;is&nbsp;from&nbsp;the&nbsp;measurement&nbsp;result&nbsp;of&nbsp;car&nbsp;size&nbsp;and&nbsp;3D&nbsp;position.</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;#&nbsp;ty:cx&nbsp;=&nbsp;0.2&nbsp;:&nbsp;680&nbsp;=&nbsp;3.6&nbsp;:&nbsp;1293</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;a&nbsp;=&nbsp;(0.2&nbsp;-&nbsp;3.6)&nbsp;/&nbsp;(680.&nbsp;-&nbsp;1293)</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;a&nbsp;+=&nbsp;a&nbsp;/&nbsp;3.7</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;b&nbsp;=&nbsp;3.6&nbsp;-&nbsp;a&nbsp;*&nbsp;680&nbsp;#&nbsp;+&nbsp;is&nbsp;right,&nbsp;-&nbsp;is&nbsp;left</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;ty&nbsp;=&nbsp;a&nbsp;*&nbsp;cx&nbsp;+&nbsp;b</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;ty&nbsp;=&nbsp;-ty&nbsp;+&nbsp;3.0</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>#&nbsp;This&nbsp;equation&nbsp;is&nbsp;from&nbsp;the&nbsp;measurement&nbsp;result&nbsp;of&nbsp;car&nbsp;size&nbsp;and&nbsp;3D&nbsp;position&nbsp;and&nbsp;based&nbsp;on&nbsp;the&nbsp;hypothesis&nbsp;of&nbsp;z&nbsp;is&nbsp;constant&nbsp;while&nbsp;running&nbsp;on&nbsp;the&nbsp;plane.</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;tz&nbsp;=&nbsp;-0.85</span></span></span></div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>&nbsp;&nbsp;return&nbsp;tx,&nbsp;ty,&nbsp;tz</span></span></span></div></pre></li>
+</ul>
+<h4 id="about-model">About model</h4>
+<p>In each library, the DNN is using and the model layer consist of below;  </p>
+<ul>
+<li>KittiBox<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\kittibox_model.png" alt="image5"><ul>
+<li>YOLOv2
+<img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\yolo_model.png" alt="image6"></li>
+</ul>
+</li>
+</ul>
+<h3 id="refinement">Refinement</h3>
+<p>First, I use kittibox, however the accuracy of detection is not good. So, I change the framework to the YOLOv2.</p>
+<ul>
+<li>KittiBox<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_ann_kb.gif" alt="gif6">  </li>
+<li>YOLOv2<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_ann_yolov2.gif" alt="gif7">  </li>
+</ul>
+<h2 id="iv-results">IV. Results</h2>
+<h3 id="model-evaluation-validation-and-justification">Model Evaluation, Validation and Justification</h3>
+<p>These are the result of my prediction by YOLOv2, and the box in the 3D is following the car.</p>
+<ul>
+<li>data : ford01<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_pcl_boxed.gif" alt="gif8">  </li>
+<li>data : ford02<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02_pcl_boxed.gif" alt="gif9">  </li>
+<li>data : ford03<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford03_pcl_boxed.gif" alt="gif10">  </li>
+</ul>
+<h2 id="v-conclusion">V. Conclusion</h2>
+<h3 id="reflection">Reflection</h3>
+<p>In my trial, I use the method of only using 2D picture to estimate the 3D position. This result depends on the prediction of the cars from image so I use the pre-trained model to shortcut. This strategy looks good for me and I can focus on the estimate function from 2D rectangle to 3D box with reasonable precision. About interesting aspects, there are the depth limit of my projection function like below;<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image5.jpg" alt="image7"><br>I think this is because my estimated model is not good for this problem, but I study a little of optimal theory of perspective it is the fine idea for using the linear equation. So, I think this occurs by using only the image of 2D camera.</p>
+<h3 id="improvement">Improvement</h3>
+<p>In the next situation, I will consider below;  </p>
+<ul>
+<li>In this trial, I did not consider about image distortion so the result is not well captured in the side of image.</li>
+<li>At a position far from my car the estimater does not clearly detect the object position. This occurs by the limitation of transfer equation is just using the linear function.</li>
+<li>To improve accuracy it should also consider with the PCL data.</li>
+</ul></body>
+</html>

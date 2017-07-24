@@ -111,25 +111,19 @@ def estimate_obstacle_car(bbox):
     dx = abs((bbox[1][0] - bbox[0][0]))
     dy = abs((bbox[1][1] - bbox[0][1]))
 
-    #tx = -9.155/429. * dy + 16.0
-    #ty = (3.98 - (-3.98)) / (441.5 - 1106.5) * cx - (-13.2447 + -5.2847) / 2  #-0.011969924812030075
-
     # tx:dy = 28.7 : 75.9 = 4 : 320
-    #a = (4 - 28.7) / (320 - 75.9) + 0.04
-    #b = 28.7 - a * 75.9 - 6# +で遠く。 -で手前
     a = (4 - 28.7) / (320 - 75.9)
     a += -a / 1.5
-    b = 28.7 - a * 75.9 - 12# +で遠く。 -で手前
+    b = 28.7 - a * 75.9 - 12 # + is far, - is closer
     tx = a * dy + b
     #tx = -0.1 * dy + 36.0
 
     # ty:cx = 0.2 : 680 = 3.6 : 1293
     a = (0.2 - 3.6) / (680. - 1293)
     a += a / 3.7
-    b = 3.6 - a * 680 #+で右。 -で左
+    b = 3.6 - a * 680 # + is right, - is left
     ty = a * cx + b
     ty = -ty + 3.0
-    #ty = 0.2 * (684. - cx) / 684. - 1.4
     tz = -0.85
     return tx, ty, tz
 
@@ -141,25 +135,18 @@ def estimate_obstacle_ped(bbox):
     dx = abs((bbox[1][0] - bbox[0][0]))
     dy = abs((bbox[1][1] - bbox[0][1]))
 
-    #tx = -9.155/429. * dy + 16.0
-    #ty = (3.98 - (-3.98)) / (441.5 - 1106.5) * cx - (-13.2447 + -5.2847) / 2  #-0.011969924812030075
-
-    # tx:dy = 28.7 : 75.9 = 4 : 320
-    #a = (4 - 28.7) / (320 - 75.9) + 0.04
-    #b = 28.7 - a * 75.9 - 6# +で遠く。 -で手前
+    # tx:dy = 8.3 : 7.5 = 340 : 360
     a = (8.3 - 7.5) / (340 - 360)
     a = a / 3.5
-    b = 8.3 - a * 340# +で遠く。 -で手前
+    b = 8.3 - a * 340 # + is far, - is closer
     tx = a * dy + b
-    #tx = -0.1 * dy + 36.0
 
     # ty:cx = 0.2 : 680 = 3.6 : 1293
     a = (0.2 - 3.6) / (680. - 1293)
     a += a / 3.7
-    b = 3.6 - a * 680 #+で右。 -で左
+    b = 3.6 - a * 680 # + is right, - is left
     ty = a * cx + b
     ty = -ty + 3.0
-    #ty = 0.2 * (684. - cx) / 684. - 1.4
     tz = -0.85
     return tx, ty, tz
 
@@ -169,9 +156,6 @@ def numericalSort(value):
     parts[1::2] = map(int, parts[1::2])
     return parts
 
-
-
-
 def main():
 
     do_images = True
@@ -180,6 +164,7 @@ def main():
     if do_images:
         pl = Pipeline()
 
+    # for dataset of round 1
     #with open("test_images/metadata.csv", "r") as f:
     #    meta_data = f.readlines()
     #l = float(str.split(meta_data[1], ",")[2])
@@ -202,12 +187,14 @@ def main():
             w = float(1.7)
             h = float(1.5)
 
+        # prepare to generate tracklets
         path = os.path.join("outputs", dir_name, "camera")
         timestamps = 0
         collection = TrackletCollection()
         obs_tracklet = Tracklet(object_type=target, l=l, w=w, h=h, first_frame=timestamps)
         tracklet_file = os.path.join("outputs", "submit", dir_name + '.xml')
 
+        # pipelines
         if do_images:
             images = sorted(glob.glob(os.path.join(path, '*.jpg')), key=numericalSort)
             lines = []
@@ -236,9 +223,7 @@ def main():
                 else:
                     line += ",0,0,0,0"
                 lines.append(line)
-
                 #plt.imshow(output)
-
                 pl.reset()
 
                 if len(bbox) > 0:
