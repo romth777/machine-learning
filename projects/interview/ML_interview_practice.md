@@ -16,6 +16,7 @@ m = SEpool * 1.96 = 0.123
 |d - m|d + m|
 |---:|---:|
 |-0.109|0.137|  
+
 Finally, we can get the range of confidence. If we set the practical significant level as 0.02, this range include it. So there is no difference in the both page with statistics.
 
 ---
