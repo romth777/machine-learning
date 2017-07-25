@@ -502,7 +502,7 @@ pre.editor-colors .fold-marker:after {
   </head>
   <body class='markdown-preview' data-use-github-style><h1 id="machine-learning-engineer-nanodegree">Machine Learning Engineer Nanodegree</h1>
 <h2 id="capstone-project">Capstone Project</h2>
-<p>Keigo Takahashi<br>July 25th, 2017</p>
+<p>Keigo<br>July 25th, 2017</p>
 <h2 id="i-definition">I. Definition</h2>
 <h3 id="project-overview">Project Overview</h3>
 <h4 id="domain-background">Domain Background</h4>
@@ -628,7 +628,7 @@ In this file, I implemented the pipeline of the main process of my trial, the ab
 <p>First, I use kittibox, however the accuracy of detection is not good. So, I change the framework to the YOLOv2.</p>
 <ul>
 <li>KittiBox<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_ann_kb.gif" alt="gif6">  </li>
-<li>YOLOv2<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_ann_yolov2.gif" alt="gif7">  </li>
+<li>YOLOv2<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_ann_yolov2.gif" alt="gif7"><br>Additionally, I tuned the hyper parameters of a and b in the tx and ty for each. This parameters are the projection parameters from 2D to 3D. The projection changes like below;<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\image6.jpg" alt="image8"></li>
 </ul>
 <h2 id="iv-results">IV. Results</h2>
 <h3 id="model-evaluation-validation-and-justification">Model Evaluation, Validation and Justification</h3>
@@ -637,6 +637,17 @@ In this file, I implemented the pipeline of the main process of my trial, the ab
 <li>data : ford01<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford01_pcl_boxed.gif" alt="gif8">  </li>
 <li>data : ford02<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford02_pcl_boxed.gif" alt="gif9">  </li>
 <li>data : ford03<br><img src="D:\workspace\src\trunk\Udacity\machine-learning\projects\capstone\image\ford03_pcl_boxed.gif" alt="gif10">  </li>
+</ul>
+<h3 id="some-discussion">Some Discussion</h3>
+<ul>
+<li><p>Is the model robust enough for the problem?<br>This model is robust for this problem, if the image predictier detect the car, it would be nice to annotate on the 3D map. This is because my algorithm consist on the static calculation by linear equation from 2D to 3D.</p>
+</li>
+<li><p>Can results found from the model be trusted?
+In the image, the result looks like trusty, however, in the 3D map it is not perfect trastable. This is because my transform algorithm is not well done about image processing and transformation. This issue will discuss in the Improvement.</p>
+</li>
+<li><p>Is the final model reasonable and aligning with solution expectations?
+Yes, it is. The detection of car in the 3D map from 2D picture seems like good. The annotation in the 3D map is not worse. But the hole accuracy is not good because of my lack of knowledge about ROS and PCL. So in the next time I will improve it to hack with them.</p>
+</li>
 </ul>
 <h2 id="v-conclusion">V. Conclusion</h2>
 <h3 id="reflection">Reflection</h3>
@@ -647,5 +658,6 @@ In this file, I implemented the pipeline of the main process of my trial, the ab
 <li>In this trial, I did not consider about image distortion so the result is not well captured in the side of image.</li>
 <li>At a position far from my car the estimater does not clearly detect the object position. This occurs by the limitation of transfer equation is just using the linear function.</li>
 <li>To improve accuracy it should also consider with the PCL data.</li>
+<li>To improve projection, we need to use the transformation matrix from camera view to PCL.</li>
 </ul></body>
 </html>

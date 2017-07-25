@@ -220,6 +220,8 @@ First, I use kittibox, however the accuracy of detection is not good. So, I chan
 ![gif6](image/ford01_ann_kb.gif)  
 * YOLOv2  
 ![gif7](image/ford01_ann_yolov2.gif)  
+Additionally, I tuned the hyper parameters of a and b in the tx and ty for each. This parameters are the projection parameters from 2D to 3D. The projection changes like below;  
+![image8](image/image6.jpg)
 
 ## IV. Results
 ### Model Evaluation, Validation and Justification
@@ -230,6 +232,16 @@ These are the result of my prediction by YOLOv2, and the box in the 3D is follow
 ![gif9](image/ford02_pcl_boxed.gif)  
  * data : ford03  
 ![gif10](image/ford03_pcl_boxed.gif)  
+
+### Some Discussion
+ * Is the model robust enough for the problem?  
+This model is robust for this problem, if the image predictier detect the car, it would be nice to annotate on the 3D map. This is because my algorithm consist on the static calculation by linear equation from 2D to 3D.
+
+ * Can results found from the model be trusted?
+ In the image, the result looks like trusty, however, in the 3D map it is not perfect trastable. This is because my transform algorithm is not well done about image processing and transformation. This issue will discuss in the Improvement.
+
+ * Is the final model reasonable and aligning with solution expectations?
+Yes, it is. The detection of car in the 3D map from 2D picture seems like good. The annotation in the 3D map is not worse. But the hole accuracy is not good because of my lack of knowledge about ROS and PCL. So in the next time I will improve it to hack with them.
 
 ## V. Conclusion
 
@@ -243,3 +255,4 @@ In the next situation, I will consider below;
  * In this trial, I did not consider about image distortion so the result is not well captured in the side of image.
  * At a position far from my car the estimater does not clearly detect the object position. This occurs by the limitation of transfer equation is just using the linear function.
  * To improve accuracy it should also consider with the PCL data.
+ * To improve projection, we need to use the transformation matrix from camera view to PCL.
