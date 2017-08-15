@@ -1,3 +1,8 @@
+# My Trial is in the list below
+ * [boston_housing.ipynb](https://github.com/romth777/machine-learning/blob/master/projects/boston_housing/boston_housing.ipynb)
+
+---
+
 # Machine Learning Engineer Nanodegree
 # Model Evaluation and Validation
 ## Project: Predicting Boston Housing Prices
