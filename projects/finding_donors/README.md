@@ -1,3 +1,8 @@
+# My Trial is in the list below
+ * [finding_donors.ipynb](https://github.com/romth777/machine-learning/blob/master/projects/finding_donors/finding_donors.ipynb)
+
+---
+
 # Machine Learning Engineer Nanodegree
 # Supervised Learning
 ## Project: Finding Donors for CharityML
