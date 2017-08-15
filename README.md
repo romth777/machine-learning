@@ -6,7 +6,7 @@ This is my challenge to Udacity's Machine Learning nanodegree, especially belong
  1. [Supervised Learning - Finding Donors in CharityML](https://github.com/romth777/machine-learning/tree/master/projects/finding_donors)
  1. [Unsupervised Learning - Identifying customers by clustering them](https://github.com/romth777/machine-learning/tree/master/projects/customer_segments)
  1. [Reinforcement Learning - Train a Smartcab How to Drive](https://github.com/romth777/machine-learning/tree/master/projects/smartcab)
- 1. [Deep Learning - Image Classification](https://github.com/romth777/machine-learning/blob/master/projects/image-classification/image_classification.ipynb)
+ 1. [Deep Learning - Image Classification](https://github.com/romth777/machine-learning/blob/master/projects/image-classification)
  1. [Deep Learning - Dog Breed Classifier](https://github.com/romth777/dog-project)
 
 ## Contents from Udacity is below
