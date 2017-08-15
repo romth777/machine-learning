@@ -2,10 +2,12 @@
 ## Introduction and Foundations
 ## Project: Titanic Survival Exploration
 
-### My Trial is in;
+---
+### My Trial is in the list below
  * [titanic_survival_exploration.ipynb](https://github.com/romth777/machine-learning/blob/master/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb)
 
 ---
+## Contents from Udacity is below
 ### Install
 
 This project requires **Python 2.7** and the following Python libraries installed:
