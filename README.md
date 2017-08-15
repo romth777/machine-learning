@@ -8,6 +8,7 @@ This is my challenge to Udacity's Machine Learning nanodegree, especially belong
  1. [Reinforcement Learning - Train a Smartcab How to Drive](https://github.com/romth777/machine-learning/tree/master/projects/smartcab)
  1. [Deep Learning - Image Classification](https://github.com/romth777/machine-learning/blob/master/projects/image-classification)
  1. [Deep Learning - Dog Breed Classifier](https://github.com/romth777/dog-project)
+ 1. [Capstone - Self-Driving Car system](https://github.com/romth777/machine-learning/tree/master/projects/capstone)
 
 ## Contents from Udacity is below
 Content for Udacity's Machine Learning curriculum, which includes projects and their descriptions.
