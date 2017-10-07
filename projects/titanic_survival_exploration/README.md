@@ -1,6 +1,5 @@
 # My Trial is in the list below
- * [customer_segments.ipynb](https://github.com/romth777/machine-learning/blob/master/projects/customer_segments/customer_segments.ipynb)
- * [report.html(same as above)](https://github.com/romth777/machine-learning/blob/master/projects/customer_segments/report.html)
+ * [titanic_survival_exploration.ipynb](https://github.com/romth777/machine-learning/blob/master/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb)
 
 ---
 
